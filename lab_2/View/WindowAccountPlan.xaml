@@ -1,0 +1,24 @@
+﻿<Window x:Class="lab1_E.View.WindowAccountPlan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:lab1_E.View"
+        mc:Ignorable="d" 
+        Title="План счетов" Height="450" Width="800">
+
+    <StackPanel>
+        <ListView x:Name="ListAccountPlan">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Наименование счета внутреннего учета" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Тип счета" DisplayMemberBinding="{Binding Type}"/>
+                        <GridViewColumn Header="Номер операции" DisplayMemberBinding="{Binding Number}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>

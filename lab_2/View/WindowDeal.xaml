@@ -1,0 +1,32 @@
+﻿<Window x:Class="lab1_E.View.WindowDeal"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:lab1_E.View"
+      mc:Ignorable="d" 
+      Title="Сделка" Height="450" Width="950">
+
+    <StackPanel>
+        <ListView x:Name="ListDeal">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Номер договора" DisplayMemberBinding="{Binding Agreement}"/>
+                        <GridViewColumn Header="Тикер ценой бумаги" DisplayMemberBinding="{Binding Tiker}"/>
+                        <GridViewColumn Header="Номер поручения по сделке" DisplayMemberBinding="{Binding Order}"/>
+                        <GridViewColumn Header="Номер сделки" DisplayMemberBinding="{Binding Number}"/>
+                        <GridViewColumn Header="Дата и время заключения сделки" DisplayMemberBinding="{Binding Date}"/>
+                        <GridViewColumn Header="Количество ценных бумаг" DisplayMemberBinding="{Binding Quantity}"/>
+                        <GridViewColumn Header="Цена по сделке одной ценной бумаги" DisplayMemberBinding="{Binding Price}"/>
+                        <GridViewColumn Header="Общая сумма сделки" DisplayMemberBinding="{Binding TotalCost}"/>
+                        <GridViewColumn Header="Код трейдера" DisplayMemberBinding="{Binding Trader}"/>
+                        <GridViewColumn Header="Комиссия торговой площадки" DisplayMemberBinding="{Binding Commission}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+
+</Window>
