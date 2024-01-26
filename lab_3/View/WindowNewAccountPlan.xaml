@@ -1,0 +1,54 @@
+﻿<Window x:Class="lab1_E.View.WindowNewAccountPlan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab1_E.View"
+        mc:Ignorable="d"
+        Title="Новый план счетов" Height="300" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="311*"/>
+            <ColumnDefinition Width="189*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Text="ID:" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,22,0,0" Height="16" Width="14" RenderTransformOrigin="-1.174,0.652"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Тип счета:" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,22,0,0" Height="16" Width="56"/>
+        <TextBlock Grid.Row="2" Text="Номер операции:" 
+           HorizontalAlignment="Left" VerticalAlignment="Center" Height="16" Width="98" Margin="17,0,0,0"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Наименование счета внутреннего учета:" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,16,0,0" Height="16" Width="224" />
+
+        <TextBox x:Name="tb_Id" Grid.Column="1" Height="20" Width="120"
+         HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"
+         Text="{Binding Id}" IsEnabled="False"/>
+        <TextBox x:Name="tb_Type" Grid.Row="1" Grid.Column="1" Height="20" Width="120"
+         HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"
+         Text="{Binding Type}"/>
+        <TextBox x:Name="tb_Number" Grid.Row="2" Grid.Column="1" Height="20" Width="120"
+         HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,16,0,0"
+         Text="{Binding Number}"/>
+        <TextBox x:Name="tb_Name" Grid.Row="3" Grid.Column="1" Height="20" Width="120"
+         HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,17,0,0"
+         Text="{Binding Name}"/>
+
+        <Button x:Name="btnCancel" Content="Отменить" Height="25" Width="70" 
+    Grid.Row="4" Grid.Column="1"
+    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,19,0,0"
+    IsCancel="True" Click="btnCancel_Click"/>
+        <Button x:Name="btnSave" Content="Сохранить" Height="25"
+    Grid.Row="4" Grid.Column="1"
+    HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,19,10,0"
+    IsDefault="True" Click="btnSave_Click" Width="69"/>
+    </Grid>
+</Window>
