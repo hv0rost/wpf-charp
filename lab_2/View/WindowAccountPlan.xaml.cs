@@ -12,8 +12,8 @@ namespace lab1_E.View
         public WindowAccountPlan()
         {
             InitializeComponent();
-            AccountPlanViewModel vmViewModel = new AccountPlanViewModel();
-            ListAccountPlan.ItemsSource = vmViewModel.ListAccountPlan;
+            AccountPlanViewModel vmAccountPlan = new AccountPlanViewModel();
+            ListAccountPlan.ItemsSource = vmAccountPlan.ListAccountPlan;
         }
     }
 }

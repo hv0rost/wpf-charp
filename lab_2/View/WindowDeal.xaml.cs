@@ -12,8 +12,8 @@ namespace lab1_E.View
         {
             InitializeComponent();
 
-            DealViewModel vmViewModel = new DealViewModel();
-            ListDeal.ItemsSource = vmViewModel.ListDeal;
+            DealViewModel vmDeal= new DealViewModel();
+            ListDeal.ItemsSource = vmDeal.ListDeal;
 
         }
     }

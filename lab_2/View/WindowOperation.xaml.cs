@@ -13,8 +13,8 @@ namespace lab1_E.View
         {
             InitializeComponent();
 
-            OperationViewModel vmViewModel = new OperationViewModel();
-            ListOperation.ItemsSource = vmViewModel.ListOperation;
+            OperationViewModel vmOperation = new OperationViewModel();
+            ListOperation.ItemsSource = vmOperation.ListOperation;
         }
     }
 }

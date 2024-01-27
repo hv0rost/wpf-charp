@@ -19,7 +19,7 @@ namespace lab1_E.View
         {
             WindowNewAccountPlan winNewAccountPlan = new WindowNewAccountPlan
             {
-                Title = "Новая валюта",
+                Title = "Новая план счетов",
                 Owner = this
             };
 
@@ -40,29 +40,29 @@ namespace lab1_E.View
         {
             WindowNewAccountPlan winNewAccountPlan = new WindowNewAccountPlan
             {
-                Title = "Редактирование валюты",
+                Title = "Редактирование плана счетов",
                 Owner = this
             };
 
-            AccountPlan сurrency = ListAccountPlan.SelectedItem as AccountPlan;
+            AccountPlan accountPlan = ListAccountPlan.SelectedItem as AccountPlan;
 
-            if (сurrency != null)
+            if (accountPlan != null)
             {
                 AccountPlan tempAccountPlan = new AccountPlan
                 {
-                    Id = сurrency.Id,
-                    Type = сurrency.Type,
-                    Name = сurrency.Name,
-                    Number = сurrency.Number,
+                    Id = accountPlan.Id,
+                    Type = accountPlan.Type,
+                    Name = accountPlan.Name,
+                    Number = accountPlan.Number,
             };
 
                 winNewAccountPlan.DataContext = tempAccountPlan;
                 if (winNewAccountPlan.ShowDialog() == true)
                 {
-                    сurrency.Id = tempAccountPlan.Id;
-                    сurrency.Type = tempAccountPlan.Type;
-                    сurrency.Name = tempAccountPlan.Name;
-                    сurrency.Number = tempAccountPlan.Number;
+                    accountPlan.Id = tempAccountPlan.Id;
+                    accountPlan.Type = tempAccountPlan.Type;
+                    accountPlan.Name = tempAccountPlan.Name;
+                    accountPlan.Number = tempAccountPlan.Number;
 
                     ListAccountPlan.ItemsSource = null;
                     ListAccountPlan.ItemsSource = vmViewModel.ListAccountPlan;
@@ -70,22 +70,22 @@ namespace lab1_E.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать валютудля редактирования",
+                MessageBox.Show("Необходимо выбрать план счетов для редактирования",
                     "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            AccountPlan сurrency = (AccountPlan)ListAccountPlan.SelectedItem;
+            AccountPlan accountPlan = (AccountPlan)ListAccountPlan.SelectedItem;
 
-            if (сurrency != null)
+            if (accountPlan != null)
             {
-                MessageBoxResult result = MessageBox.Show("Удалить данные валюте: [ "
-                    + сurrency.Id + " ]", "Предупреждение", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Удалить план счетов: [ "
+                    + accountPlan.Name + " ]", "Предупреждение", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
 
-                if (result == MessageBoxResult.OK) vmViewModel.ListAccountPlan.Remove(сurrency);
-                else MessageBox.Show("Необходимо выбрать валюту для удаления", "Предупреждение",
+                if (result == MessageBoxResult.OK) vmViewModel.ListAccountPlan.Remove(accountPlan);
+                else MessageBox.Show("Необходимо выбрать план счетов для удаления", "Предупреждение",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }

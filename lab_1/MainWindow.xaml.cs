@@ -25,23 +25,23 @@ namespace lab1_E
 
         private void AccountPlan_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowAccountPlan or = new WindowAccountPlan();
-            or.Show();
+            WindowAccountPlan accountPlan = new WindowAccountPlan();
+            accountPlan.Show();
         }
         private void Deal_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowDeal ort = new WindowDeal();
-            ort.Show();
+            WindowDeal deal = new WindowDeal();
+            deal.Show();
         }
         private void Operation_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowOperation orv = new WindowOperation();
-            orv.Show();
+            WindowOperation operation = new WindowOperation();
+            operation.Show();
         }
         private void SubAccount_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowSubAccount cu = new WindowSubAccount();
-            cu.Show();
+            WindowSubAccount subAccount = new WindowSubAccount();
+            subAccount.Show();
         }
     }
 }
